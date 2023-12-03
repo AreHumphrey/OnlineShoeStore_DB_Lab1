@@ -4,11 +4,28 @@ CREATE TABLE IF NOT EXISTS Products
     product_name TEXT    NOT NULL,
     category     TEXT    NOT NULL,
     color        TEXT,
-    size         FLOAT,
-    price        DECIMAL NOT NULL,
+    country      TEXT,
+    brand        TEXT,
+    material     TEXT,
     quantity     INTEGER NOT NULL DEFAULT 0
-
 );
+
+CREATE TABLE IF NOT EXISTS Colors
+(
+    color_id    INTEGER PRIMARY KEY AUTOINCREMENT,
+    product_id  INTEGER,
+    color       DECIMAL NOT NULL,
+    FOREIGN KEY (product_id) REFERENCES Products(product_id)
+);
+
+CREATE TABLE IF NOT EXISTS Sizes
+(
+    size_id    INTEGER PRIMARY KEY AUTOINCREMENT,
+    product_id  INTEGER,
+    size        FLOAT,
+    FOREIGN KEY (product_id) REFERENCES Products(product_id)
+);
+
 
 CREATE TABLE IF NOT EXISTS Customers
 (
