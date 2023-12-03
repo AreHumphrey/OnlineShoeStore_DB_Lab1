@@ -3,6 +3,7 @@ CREATE TABLE IF NOT EXISTS Products
     product_id   INTEGER PRIMARY KEY AUTOINCREMENT,
     product_name TEXT    NOT NULL,
     category     TEXT    NOT NULL,
+    price NUMERIC NOT NULL,
     color        TEXT,
     country      TEXT,
     brand        TEXT,
